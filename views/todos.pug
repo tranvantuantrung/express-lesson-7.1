@@ -1,0 +1,21 @@
+h1 Todos list
+
+h2 Search
+ul
+  each todo in todosList
+    li
+      span=todo.text
+      span &nbsp
+      a(href="todos/" + todo.id + "/delete") Delete
+    
+form(method="GET")
+  input(type="text", name="q", value=q)
+  button Search
+
+h2 Create
+form(action="/todos/create", method="POST")
+  lable Todo:
+  br
+  input(type="text", name="text")
+  button create
+  
